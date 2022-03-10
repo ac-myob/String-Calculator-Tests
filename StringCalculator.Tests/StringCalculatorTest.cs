@@ -80,6 +80,16 @@ public class StringCalculatorTest
     }
 
     [Fact]
+    public void Add_ReturnsSumOfNumbersThatAreLessThan1000_WithNumbersOver1000() {
+        var stringCalculator = new StringCalculator();
+        var expected = 2;
+
+        var result = stringCalculator.Add("1000,1001,2");
+        
+        Assert.Equal(expected, result);
+    }
+
+    [Fact]
     public void Add_ReturnsSumOfNumbers_WithCustomMultiCharacterDelimiter() {
         var stringCalculator = new StringCalculator();
         var expected = 6;
